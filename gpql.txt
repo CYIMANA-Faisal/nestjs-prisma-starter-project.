@@ -1,0 +1,43 @@
+# Write your query or mutation here
+mutation Signup {
+  signup(
+    data: {
+      email: "cyimanafaisal@gmail.com"
+      firstname: "CYIMANA"
+      lastname: "Faisal"
+      password: "Password@123"
+    }
+  ) {
+    accessToken
+    refreshToken
+    user {
+      firstname
+      lastname
+      id
+      email
+      role
+    }
+  }
+}
+
+# Signin mutation
+mutation Login {
+  login(data: { email: "cyimanafaisal@gmail.com", password: "Password@123" }) {
+    accessToken
+    refreshToken
+    user {
+      lastname
+      firstname
+      id
+      role
+      posts {
+        title
+        content
+        id
+        updatedAt
+        createdAt
+        published
+      }
+    }
+  }
+}
